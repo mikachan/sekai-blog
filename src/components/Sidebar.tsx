@@ -4,14 +4,30 @@ export default () => (
 	<aside>
 		<div className="px-8">
 			<div className="flex flex-col bg-white max-w-sm px-6 py-4 mx-auto rounded-lg shadow-md">
-				<span className="flex items-center">
+				<div className="text-gray-700">
 					<img
-						src="https://secure.gravatar.com/avatar/5ce67f17b3cb5143ebc6ba880164d1a2?size=35"
+						src="https://secure.gravatar.com/avatar/5ce67f17b3cb5143ebc6ba880164d1a2?size=85"
 						alt="avatar"
-						className="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
+						className="mb-4 object-cover rounded-full hidden sm:inline-block"
 					/>
-					<span className="text-gray-700 font-bold">Sarah</span>
-				</span>
+					<p className="mb-4">
+						<strong>Sarah N</strong>
+					</p>
+					<p className="mb-4">Web developer from Lancashire.</p>
+					<p className="mb-4">
+						Usually found walking her dog, writing JavaScript,
+						watching anime or listening to Weezer.
+					</p>
+					<p>
+						<a
+							href="https://sekai.co.uk"
+							target="_blank"
+							className="italic"
+						>
+							Read more &#8594;
+						</a>
+					</p>
+				</div>
 			</div>
 		</div>
 		{/* <div className="mt-10 px-8">

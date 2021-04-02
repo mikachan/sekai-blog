@@ -39,12 +39,12 @@ const Layout = ({ data, children }) => {
 					<Header title={title} />
 					<main className="px-6 py-8">
 						<div className="flex justify-between container mx-auto">
+							<div className="-mx-8 w-4/12 hidden lg:block">
+								<Sidebar />
+							</div>
 							<div className="w-full lg:w-8/12">
 								{children}
 								{/* <Pagination /> */}
-							</div>
-							<div className="-mx-8 w-4/12 hidden lg:block">
-								<Sidebar />
 							</div>
 						</div>
 					</main>
