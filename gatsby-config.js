@@ -20,7 +20,7 @@ const linkResolver = (doc) => {
 
 module.exports = {
 	siteMetadata: {
-		title: 'blog.sekai.co.uk',
+		title: "Sarah's Blog",
 	},
 	plugins: [
 		'gatsby-plugin-image',
