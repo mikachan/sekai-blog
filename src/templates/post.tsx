@@ -94,18 +94,27 @@ const PostSlices = ({ slices }) =>
 // Display the title, date, and content of the Post
 const PostBody = ({ blogPost }) => {
 	return (
-		<div>
-			<div className="container post-header">
-				<div className="back">
-					<Link to="/">back to homepage</Link>
+		<div className="post">
+			<div className="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
+				<div className="flex justify-between items-center">
+					<div className="back">
+						<Link to="/">&#8592; back to homepage</Link>
+					</div>
+					<span className="font-light text-gray-600">
+						<time>{blogPost.date}</time>
+					</span>
 				</div>
-				<h1>
-					{RichText.asText(blogPost.title.raw).length !== 0
-						? RichText.asText(blogPost.title.raw)
-						: 'Untitled'}
-				</h1>
+				<div className="mt-2">
+					<span className="text-2xl text-gray-700 font-bold hover:underline">
+						<h1>
+							{RichText.asText(blogPost.title.raw).length !== 0
+								? RichText.asText(blogPost.title.raw)
+								: 'Untitled'}
+						</h1>
+					</span>
+					<PostSlices slices={blogPost.body} />
+				</div>
 			</div>
-			<PostSlices slices={blogPost.body} />
 		</div>
 	);
 };
