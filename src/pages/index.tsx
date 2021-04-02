@@ -37,24 +37,12 @@ export const query = graphql`
 	}
 `;
 
-const BlogHomeHead = () => {
-	const avatar = { backgroundImage: `url()` };
-	return (
-		<div className="home-header container">
-			<div className="blog-avatar" style={avatar} />
-			<h1>blog @ sekai.co.uk</h1>
-			<p className="blog-description">Sarah's blog</p>
-		</div>
-	);
-};
-
 export const Homepage = ({ data }) => {
 	if (!data) return null;
 	const posts = data.allPrismicPost.edges;
 
 	return (
 		<Layout>
-			<BlogHomeHead />
 			<BlogPosts posts={posts} />
 		</Layout>
 	);

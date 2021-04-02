@@ -1,3 +1,21 @@
+@import './font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600');
+
+.icon {
+    text-decoration: none;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none !important;
+}
+
+.icon .label {
+    display: none;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
