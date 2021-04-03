@@ -2,6 +2,7 @@ import { Date, RichText } from 'prismic-reactjs';
 import { ImageCaption, Quote, Text } from '../components/slices';
 import { Link, graphql } from 'gatsby';
 
+import { Helmet } from 'react-helmet';
 import Layout from '../components/Layout';
 import React from 'react';
 import { formatDate } from '../utils/formatDate';
@@ -93,7 +94,7 @@ const PostSlices = ({ slices }) =>
 	});
 
 // Display the title, date, and content of the Post
-const PostBody = ({ blogPost }) => {
+const PostBody = ({ blogPost, blogTitle }) => {
 	let postDate: Date | string = Date(blogPost.date);
 	postDate = formatDate(postDate);
 
@@ -101,21 +102,17 @@ const PostBody = ({ blogPost }) => {
 		<div className="post">
 			<div className="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
 				<div className="flex justify-between items-center">
-					<div className="back">
-						<Link to="/">&#8592; back to homepage</Link>
+					<div className="back text-sm text-gray-500 hover:underline">
+						<Link to="/">&#8592; Back to Homepage</Link>
 					</div>
 					<span className="font-light text-gray-600">
 						<time>{postDate}</time>
 					</span>
 				</div>
 				<div className="mt-2">
-					<span className="text-2xl text-gray-700 font-bold hover:underline">
-						<h1>
-							{RichText.asText(blogPost.title.raw).length !== 0
-								? RichText.asText(blogPost.title.raw)
-								: 'Untitled'}
-						</h1>
-					</span>
+					<h1 className="text-2xl text-gray-700 font-bold">
+						{blogTitle}
+					</h1>
 					<PostSlices slices={blogPost.body} />
 				</div>
 			</div>
@@ -126,10 +123,17 @@ const PostBody = ({ blogPost }) => {
 export const Post = ({ data }) => {
 	if (!data) return null;
 	const post = data.prismicPost.data;
+	const postTitle =
+		RichText.asText(post.title.raw).length !== 0
+			? RichText.asText(post.title.raw)
+			: 'Untitled';
 
 	return (
 		<Layout>
-			<PostBody blogPost={post} />
+			<Helmet>
+				<title>{postTitle}</title>
+			</Helmet>
+			<PostBody blogPost={post} blogTitle={postTitle} />
 		</Layout>
 	);
 };

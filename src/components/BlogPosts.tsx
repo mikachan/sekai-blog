@@ -10,7 +10,7 @@ const firstParagraph = (post) => {
 	);
 
 	if (firstTextSlice != null) {
-		const textLimit = 100;
+		const textLimit = 200;
 		const text = RichText.asText(firstTextSlice.primary.text.raw);
 		const limitedText = text.substring(0, textLimit);
 
@@ -54,7 +54,7 @@ const PostSummary = ({ post, id, i }) => {
 					{firstParagraph(post.node.data)}
 				</div>
 				<div className="flex justify-between items-center mt-4">
-					<span className="text-red-800 hover:underline">
+					<span className="text-pink-700 hover:underline">
 						<Link to={post.node.url}>Read more</Link>
 					</span>
 				</div>
