@@ -1,3 +1,4 @@
+import { OutboundLink } from 'gatsby-plugin-google-gtag';
 import React from 'react';
 
 export default () => (
@@ -19,13 +20,13 @@ export default () => (
 						watching anime or listening to Weezer.
 					</p>
 					<p>
-						<a
+						<OutboundLink
 							href="https://sekai.co.uk"
 							target="_blank"
-							className="italic text-red-800 hover:underline"
+							className="italic text-pink-700 hover:underline"
 						>
 							Read more &#8594;
-						</a>
+						</OutboundLink>
 					</p>
 				</div>
 			</div>

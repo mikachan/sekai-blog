@@ -25,6 +25,15 @@ module.exports = {
 	plugins: [
 		'gatsby-plugin-image',
 		'gatsby-plugin-react-helmet',
+		{
+			resolve: `gatsby-plugin-google-gtag`,
+			options: {
+				trackingIds: ['G-C533EQKEZM'],
+				gtagConfig: {
+					send_page_view: true,
+				},
+			},
+		},
 		'gatsby-plugin-sitemap',
 		{
 			resolve: 'gatsby-plugin-manifest',
