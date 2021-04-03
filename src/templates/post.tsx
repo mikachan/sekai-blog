@@ -1,9 +1,10 @@
+import { Date, RichText } from 'prismic-reactjs';
 import { ImageCaption, Quote, Text } from '../components/slices';
 import { Link, graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 import React from 'react';
-import { RichText } from 'prismic-reactjs';
+import { formatDate } from '../utils/formatDate';
 import { withPreview } from 'gatsby-source-prismic';
 
 export const query = graphql`
@@ -66,21 +67,21 @@ const PostSlices = ({ slices }) =>
 			switch (slice.slice_type) {
 				case 'text':
 					return (
-						<div key={index} className="homepage-slice-wrapper">
+						<div key={index} className="slice">
 							<Text slice={slice} />
 						</div>
 					);
 
 				case 'quote':
 					return (
-						<div key={index} className="homepage-slice-wrapper">
+						<div key={index} className="slice">
 							<Quote slice={slice} />
 						</div>
 					);
 
 				case 'image_with_caption':
 					return (
-						<div key={index} className="homepage-slice-wrapper">
+						<div key={index} className="slice">
 							<ImageCaption slice={slice} />
 						</div>
 					);
@@ -93,6 +94,9 @@ const PostSlices = ({ slices }) =>
 
 // Display the title, date, and content of the Post
 const PostBody = ({ blogPost }) => {
+	let postDate: Date | string = Date(blogPost.date);
+	postDate = formatDate(postDate);
+
 	return (
 		<div className="post">
 			<div className="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
@@ -101,7 +105,7 @@ const PostBody = ({ blogPost }) => {
 						<Link to="/">&#8592; back to homepage</Link>
 					</div>
 					<span className="font-light text-gray-600">
-						<time>{blogPost.date}</time>
+						<time>{postDate}</time>
 					</span>
 				</div>
 				<div className="mt-2">

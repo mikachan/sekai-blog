@@ -2,6 +2,7 @@ import { Date, RichText } from 'prismic-reactjs';
 
 import { Link } from 'gatsby';
 import React from 'react';
+import { formatDate } from '../utils/formatDate';
 
 const firstParagraph = (post) => {
 	const firstTextSlice = post.body.find(
@@ -30,14 +31,7 @@ const firstParagraph = (post) => {
 
 const PostSummary = ({ post, id, i }) => {
 	let postDate: Date | string = Date(post.node.data.date);
-	postDate = postDate
-		? new Intl.DateTimeFormat('en-GB', {
-				month: 'short',
-				day: '2-digit',
-				year: 'numeric',
-		  }).format(postDate)
-		: '';
-
+	postDate = formatDate(postDate);
 	const defaultTitle = 'Untitled';
 
 	return (
@@ -60,7 +54,7 @@ const PostSummary = ({ post, id, i }) => {
 					{firstParagraph(post.node.data)}
 				</div>
 				<div className="flex justify-between items-center mt-4">
-					<span className="text-blue-500 hover:underline">
+					<span className="text-red-800 hover:underline">
 						<Link to={post.node.url}>Read more</Link>
 					</span>
 				</div>
