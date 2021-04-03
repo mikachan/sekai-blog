@@ -12,28 +12,28 @@ export default (props) => (
 
 			<a
 				href="#"
-				className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:bg-blue-500 hover:text-white rounded-md"
+				className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:text-red-800 hover:text-white rounded-md"
 			>
 				1
 			</a>
 
 			<a
 				href="#"
-				className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:bg-blue-500 hover:text-white rounded-md"
+				className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:text-red-800 hover:text-white rounded-md"
 			>
 				2
 			</a>
 
 			<a
 				href="#"
-				className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:bg-blue-500 hover:text-white rounded-md"
+				className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:text-red-800 hover:text-white rounded-md"
 			>
 				3
 			</a>
 
 			<a
 				href="#"
-				className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:bg-blue-500 hover:text-white rounded-md"
+				className="mx-1 px-3 py-2 bg-white text-gray-700 font-medium hover:text-red-800 hover:text-white rounded-md"
 			>
 				Next
 			</a>

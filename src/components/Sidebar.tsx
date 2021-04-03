@@ -22,7 +22,7 @@ export default () => (
 						<a
 							href="https://sekai.co.uk"
 							target="_blank"
-							className="italic"
+							className="italic text-red-800 hover:underline"
 						>
 							Read more &#8594;
 						</a>

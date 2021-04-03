@@ -19,3 +19,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.post-text p {
+    @apply mb-4;
+}

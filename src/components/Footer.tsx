@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default () => (
-	<footer className="px-6 py-2 bg-gray-800 text-gray-100">
+	<footer className="px-6 py-2 bg-purple-900 text-gray-100">
 		<div className="flex flex-col justify-between items-center container mx-auto md:flex-row">
-			<p className="mt-2 md:mt-0 italic">&copy; 2021</p>
+			<p className="mt-2 md:mt-0 italic text-sm">&copy; 2021</p>
 			<div className="flex -mx-2 mt-4 mb-2 md:mt-0 md:mb-0">
 				<a
 					href="https://github.com/mikachan"
