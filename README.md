@@ -6,6 +6,8 @@ The block theme for [blog.sekai.co.uk](https://blog.sekai.co.uk/): a boxed, tabl
 
 Any pushes deploy the theme to the live site on Pressable.
 
+The theme lives in `wp-content/themes/sekai`, the same path it has on the server. Pressable syncs the `wp-content/themes` folder, so keep that layout.
+
 ## Site Editor changes
 
 Make template and template part changes in these files rather than in the Site Editor. An edit saved in the Site Editor is stored in the database and takes precedence over the file here, so later changes to the file won't show up.
