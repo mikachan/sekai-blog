@@ -50,41 +50,58 @@ add_action( 'pre_get_posts', 'sekai_exclude_notes_from_home' );
  * Gives untitled posts a title made from their first few words, so they
  * don't turn into empty links in post lists.
  *
- * @param string   $block_content Rendered block.
- * @param array    $block         Parsed block.
- * @param WP_Block $instance      Block instance.
+ * Core's post title block renders nothing for an empty title, so the
+ * fallback is swapped in only while that block renders. The block then
+ * adds its own link, classes and styles as usual.
+ *
+ * @param string|null $pre_render Short-circuit output, if any.
+ * @param array       $block      Parsed block.
+ * @return string|null
+ */
+function sekai_untitled_fallback_start( ?string $pre_render, array $block ): ?string {
+	if ( 'core/post-title' === $block['blockName'] ) {
+		add_filter( 'the_title', 'sekai_untitled_title', 10, 2 );
+	}
+	return $pre_render;
+}
+add_filter( 'pre_render_block', 'sekai_untitled_fallback_start', 10, 2 );
+
+/**
+ * Stops the fallback once the post title block has rendered.
+ *
+ * @param string $block_content Rendered post title.
  * @return string
  */
-function sekai_untitled_fallback( string $block_content, array $block, WP_Block $instance ): string {
-	$post_id = $instance->context['postId'] ?? 0;
-	if ( ! $post_id || '' !== trim( get_the_title( $post_id ) ) ) {
-		return $block_content;
+function sekai_untitled_fallback_stop( string $block_content ): string {
+	remove_filter( 'the_title', 'sekai_untitled_title' );
+	return $block_content;
+}
+add_filter( 'render_block_core/post-title', 'sekai_untitled_fallback_stop', 1 );
+
+/**
+ * The first few words of an untitled post.
+ *
+ * @param string     $title   Post title.
+ * @param int|string $post_id Post ID.
+ * @return string
+ */
+function sekai_untitled_title( $title, $post_id ): string {
+	$title = (string) $title;
+	if ( '' !== trim( $title ) ) {
+		return $title;
 	}
+
+	// The excerpt renders the post's blocks, which may ask for titles again.
+	remove_filter( 'the_title', 'sekai_untitled_title' );
 
 	// Excerpts skip blocks like pullquotes, so fall back to the raw text.
-	$text = wp_strip_all_tags( get_the_excerpt( $post_id ) );
+	$text = wp_strip_all_tags( get_the_excerpt( (int) $post_id ) );
 	if ( '' === trim( $text ) ) {
-		$text = wp_strip_all_tags( get_post_field( 'post_content', $post_id ) );
+		$text = wp_strip_all_tags( get_post_field( 'post_content', (int) $post_id ) );
 	}
 
-	$words = wp_trim_words( $text, 8, '…' );
-	if ( '' === $words ) {
-		return $block_content;
-	}
-
-	$level = $block['attrs']['level'] ?? 2;
-	$tag   = 0 === $level ? 'p' : 'h' . (int) $level;
-	$text  = esc_html( $words );
-
-	if ( ! empty( $block['attrs']['isLink'] ) ) {
-		$text = sprintf( '<a href="%s" target="_self">%s</a>', esc_url( get_permalink( $post_id ) ), $text );
-	}
-
-	$class = trim( 'wp-block-post-title ' . ( $block['attrs']['className'] ?? '' ) );
-
-	return sprintf( '<%1$s class="%2$s">%3$s</%1$s>', $tag, esc_attr( $class ), $text );
+	return esc_html( wp_trim_words( $text, 8, '…' ) );
 }
-add_filter( 'render_block_core/post-title', 'sekai_untitled_fallback', 10, 3 );
 
 /**
  * Marks the menu link for the page being viewed.
