@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Cell",
+	"slug": "cell",
+	"blockTypes": [ "core/group" ],
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--tint)"
+		},
+		"border": {
+			"color": "var(--wp--preset--color--rule)",
+			"style": "solid",
+			"width": "1px"
+		},
+		"spacing": {
+			"blockGap": "0.3rem",
+			"padding": {
+				"top": "8px",
+				"right": "8px",
+				"bottom": "8px",
+				"left": "8px"
+			}
+		},
+		"typography": {
+			"fontSize": "var(--wp--preset--font-size--small)"
+		},
+		"blocks": {
+			"core/heading": {
+				"color": {
+					"text": "var(--wp--preset--color--primary)"
+				},
+				"typography": {
+					"textTransform": "lowercase"
+				}
+			}
+		}
+	}
+}
