@@ -1,5 +1,7 @@
 # WordPress block theme for blog.sekai.co.uk
 
+[![blog.sekai.co.uk](https://img.shields.io/website?url=https%3A%2F%2Fblog.sekai.co.uk)](https://blog.sekai.co.uk/)
+
 The block theme for [blog.sekai.co.uk](https://blog.sekai.co.uk/): a boxed, table-style layout, like we used back in the early 2000s.
 
 ## Deploying
