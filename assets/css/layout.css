@@ -1,0 +1,252 @@
+/*
+ * Sekai layout: a box that looks like an early-2000s table layout,
+ * built with grid. The photo comes from theme.json's root background.
+ */
+
+.sekai-box {
+	position: relative;
+	box-sizing: border-box;
+	max-width: 960px;
+	margin: 4vh auto;
+	padding: 6px;
+	background: var(--wp--preset--color--base);
+	border: 3px double var(--wp--preset--color--primary);
+}
+
+.sekai-box > * + * {
+	margin-block-start: 6px;
+}
+
+.sekai-title-bar {
+	padding: 0.6rem 0.9rem;
+}
+
+.sekai-title-bar .wp-block-site-title {
+	margin: 0;
+	line-height: 1.2;
+}
+
+.sekai-title-bar .wp-block-site-title a {
+	text-decoration: none;
+}
+
+.sekai-tagline {
+	margin: 0;
+	padding: 0.25rem 0.9rem 0;
+}
+
+.sekai-tagline:empty {
+	display: none;
+}
+
+.sekai-row {
+	display: grid;
+	grid-template-columns: 180px minmax(0, 1fr);
+	grid-template-areas: "side main";
+	gap: 6px;
+	align-items: start;
+}
+
+/* Core's flow-layout gap would push the sidebar down; the grid gap does the spacing. */
+.sekai-row > * {
+	margin-block: 0;
+}
+
+.sekai-main {
+	grid-area: main;
+	min-width: 0;
+	padding: 12px 16px;
+	border: 1px solid var(--wp--preset--color--rule);
+	overflow-wrap: anywhere;
+}
+
+/* Fixed-width media (pasted HTML, embeds) must not widen the page. */
+.sekai-main :is(img, video, iframe, embed, object) {
+	max-width: 100%;
+}
+
+.sekai-main :is(img, video) {
+	height: auto;
+}
+
+.sekai-main > :first-child {
+	margin-block-start: 0;
+}
+
+.sekai-side {
+	grid-area: side;
+	min-width: 0;
+}
+
+.sekai-cell {
+	margin: 0 0 6px;
+	padding: 8px;
+	background: var(--wp--preset--color--tint);
+	border: 1px solid var(--wp--preset--color--rule);
+	font-size: var(--wp--preset--font-size--small);
+	overflow-wrap: anywhere;
+}
+
+.sekai-cell:last-child {
+	margin-bottom: 0;
+}
+
+.sekai-cell > * {
+	margin-block: 0;
+}
+
+.sekai-cell-label {
+	margin-block-end: 0.3rem;
+	color: var(--wp--preset--color--primary);
+	text-transform: lowercase;
+}
+
+.sekai-links {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+/* Links run on in a row, separated by dots, like an old-web footer. */
+.sekai-links li {
+	display: inline;
+}
+
+.sekai-links li + li::before {
+	content: " · ";
+	color: var(--wp--preset--color--muted);
+}
+
+/* Post lists: date, then title, on one row. */
+.sekai-list .wp-block-post-template {
+	margin: 0;
+	padding: 0;
+}
+
+.sekai-list .wp-block-post-template > li {
+	margin-block: 0.2rem;
+}
+
+.sekai-list .wp-block-post-title {
+	margin: 0;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: inherit;
+	font-weight: 400;
+}
+
+.sekai-date {
+	flex: none;
+	font-variant-numeric: tabular-nums;
+}
+
+.sekai-pagination {
+	margin-block-start: 1rem;
+}
+
+.sekai-photo img {
+	width: 100%;
+	height: auto;
+}
+
+/* Photos category: a grid of thumbnails, each in its own little cell. */
+.sekai-photo-grid .wp-block-post-template {
+	margin: 0;
+	padding: 0;
+	gap: 6px;
+}
+
+.sekai-photo-tile {
+	padding: 4px;
+	background: var(--wp--preset--color--tint);
+	border: 1px solid var(--wp--preset--color--rule);
+}
+
+.sekai-photo-tile .wp-block-post-featured-image {
+	margin: 0;
+}
+
+.sekai-photo-tile .wp-block-post-title {
+	margin: 0.3rem 0 0;
+	font-family: var(--wp--preset--font-family--body);
+	font-size: var(--wp--preset--font-size--small);
+	font-weight: 400;
+}
+
+.sekai-foot {
+	text-align: center;
+}
+
+.sekai-foot p {
+	margin: 0;
+	padding: 0.25rem;
+}
+
+@media (max-width: 700px) {
+	.sekai-box {
+		margin: 8px;
+	}
+
+	.sekai-row {
+		grid-template-columns: minmax(0, 1fr);
+		grid-template-areas: "main" "side";
+	}
+
+	body {
+		background-attachment: scroll !important;
+	}
+}
+
+.sekai-domain {
+	color: var(--wp--preset--color--muted);
+	font-size: smaller;
+}
+
+/* The page you're on: bold, with a small marker. */
+.sekai-menu .current-menu-item > a {
+	font-weight: 700;
+}
+
+.sekai-menu .current-menu-item > a::before {
+	content: "» ";
+}
+
+/* Last.fm: the plugin bolds the artist; keep it in the body weight. */
+.sekai-cell .wp-block-groovelog-blocks-for-last-fm-recently-played-tracks .tracks-list li .artist-name {
+	font-weight: 400;
+}
+
+/* Category marks in post lists, in a fixed slot so titles line up. */
+.sekai-mark {
+	flex: none;
+	width: 1.1em;
+	color: var(--wp--preset--color--muted);
+	text-align: center;
+}
+
+/* A tiny goat hiding in the corner of the box. */
+.sekai-egg {
+	position: absolute;
+	right: 10px;
+	bottom: 6px;
+	line-height: 0;
+	color: var(--wp--preset--color--muted);
+	opacity: 0.5;
+}
+
+.sekai-egg:hover,
+.sekai-egg:focus-visible {
+	opacity: 1;
+	animation: sekai-hop 0.5s ease-in-out;
+}
+
+@keyframes sekai-hop {
+	0%, 100% { transform: translateY(0); }
+	40% { transform: translateY(-5px) rotate(-6deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sekai-egg:hover,
+	.sekai-egg:focus-visible {
+		animation: none;
+	}
+}

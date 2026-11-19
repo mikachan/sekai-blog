@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Windmill gears",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#fffaf3"
+				},
+				{
+					"slug": "contrast",
+					"name": "Contrast",
+					"color": "#2b231d"
+				},
+				{
+					"slug": "primary",
+					"name": "Primary",
+					"color": "#5a3d2b"
+				},
+				{
+					"slug": "tint",
+					"name": "Tint",
+					"color": "#f3eadf"
+				},
+				{
+					"slug": "rule",
+					"name": "Rule",
+					"color": "#cdb9a3"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#8c3f1e"
+				},
+				{
+					"slug": "muted",
+					"name": "Muted",
+					"color": "#6b5f55"
+				}
+			]
+		}
+	},
+	"styles": {
+		"background": {
+			"backgroundImage": {
+				"url": "file:./assets/images/windmill.jpg"
+			}
+		}
+	}
+}
