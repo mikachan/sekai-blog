@@ -6,16 +6,10 @@ The block theme for [blog.sekai.co.uk](https://blog.sekai.co.uk/): a boxed, tabl
 
 Any pushes deploy the theme to the live site on Pressable.
 
-The theme lives in `wp-content/themes/sekai`, the same path it has on the server. Pressable syncs the `wp-content/themes` folder, so keep that layout.
+The theme lives in `wp-content/themes/sekai`, the same path it has on the server. Pressable syncs the `wp-content/themes` folder.
 
 ## Site Editor changes
 
 Make template and template part changes in these files rather than in the Site Editor. An edit saved in the Site Editor is stored in the database and takes precedence over the file here, so later changes to the file won't show up.
 
 If that happens, copy anything worth keeping into the file, then reset the template or part in the Site Editor (Patterns → Template Parts, or Templates, then Reset).
-
-## Looks
-
-The theme comes with three looks, each a photo with a palette to match: Hawthorn (the default, in `theme.json`), Rail switch and Windmill gears (in `styles/`). Pick one under Appearance → Editor → Styles.
-
-The footer credits the background photo and links to its post. The bundled photos are matched to their posts by slug in `functions.php`. A photo uploaded in the Styles panel links to the post it was attached to.
