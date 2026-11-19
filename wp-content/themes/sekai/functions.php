@@ -22,6 +22,20 @@ function sekai_enqueue_styles(): void {
 add_action( 'wp_enqueue_scripts', 'sekai_enqueue_styles' );
 
 /**
+ * Loads the minimise button for the box on the front end.
+ */
+function sekai_enqueue_scripts(): void {
+	wp_enqueue_script(
+		'sekai-minimise',
+		get_theme_file_uri( 'assets/js/minimise.js' ),
+		array(),
+		(string) filemtime( get_theme_file_path( 'assets/js/minimise.js' ) ),
+		array( 'strategy' => 'defer' )
+	);
+}
+add_action( 'wp_enqueue_scripts', 'sekai_enqueue_scripts' );
+
+/**
  * Adds the layout styles to the editor.
  */
 function sekai_editor_styles(): void {

@@ -147,3 +147,79 @@
 		animation: none;
 	}
 }
+
+/* Minimise: the title bar's button tucks the box into a tab at the bottom. */
+.sekai-title-bar {
+	display: flex;
+	gap: 0.6rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.sekai-title-bar > * {
+	margin-block: 0;
+}
+
+.sekai-minimise,
+.sekai-restore {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid currentColor;
+	border-radius: 0;
+	color: var(--wp--preset--color--base);
+	background: var(--wp--preset--color--primary);
+	font: inherit;
+	cursor: pointer;
+}
+
+.sekai-minimise {
+	width: 1.5rem;
+	height: 1.5rem;
+	padding: 0;
+}
+
+.sekai-minimise:hover,
+.sekai-minimise:focus-visible,
+.sekai-restore:hover,
+.sekai-restore:focus-visible {
+	color: var(--wp--preset--color--primary);
+	background: var(--wp--preset--color--base);
+}
+
+.sekai-restore {
+	position: fixed;
+	bottom: 8px;
+	left: 8px;
+	gap: 0.5rem;
+	padding: 0.4rem 0.8rem;
+	border: 3px double var(--wp--preset--color--base);
+	font-family: var(--wp--preset--font-family--heading);
+	font-size: var(--wp--preset--font-size--small);
+}
+
+.sekai-restore,
+.sekai-minimised .sekai-box {
+	display: none;
+}
+
+.sekai-minimised .sekai-restore {
+	display: inline-flex;
+	animation: sekai-pop 0.2s ease-out;
+}
+
+.sekai-box.is-restored {
+	animation: sekai-pop 0.2s ease-out;
+}
+
+@keyframes sekai-pop {
+	from { opacity: 0; transform: scale(0.96); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.sekai-box.is-restored,
+	.sekai-minimised .sekai-restore {
+		animation: none;
+	}
+}
