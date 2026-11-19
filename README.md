@@ -1,22 +1,10 @@
-# Sekai
+# WordPress block theme for blog.sekai.co.uk
 
-The block theme for [blog.sekai.co.uk](https://blog.sekai.co.uk/): a boxed, table-style layout over one of your own photos.
+The block theme for [blog.sekai.co.uk](https://blog.sekai.co.uk/): a boxed, table-style layout, like we used back in the early 2000s.
 
 ## Deploying
 
-The repo root is the theme folder. Pushes to `main` deploy it to `wp-content/themes/sekai` on Pressable, so work on a branch and merge when it's ready to go live.
-
-Deploys only change theme files. Posts, settings and anything else in the database stay as they are.
-
-## Working locally
-
-The local copy of the site runs in [WordPress Studio](https://developer.wordpress.com/studio/). Copy the theme into the Studio site to try changes:
-
-```sh
-rsync -a --exclude .git --exclude README.md --exclude .gitignore ./ ~/Studio/blogsekaicouk/wp-content/themes/sekai/
-```
-
-To refresh the local content from the live site, pull just the database with `studio pull --remote-site blog.sekai.co.uk --options=sqls`. Avoid pushing the database back to live; it replaces everything there, including anything that has changed since the last pull.
+Any pushes deploy the theme to the live site on Pressable.
 
 ## Site Editor changes
 
