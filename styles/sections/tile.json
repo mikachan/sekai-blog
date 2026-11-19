@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Tile",
+	"slug": "tile",
+	"blockTypes": [ "core/group" ],
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--tint)"
+		},
+		"border": {
+			"color": "var(--wp--preset--color--rule)",
+			"style": "solid",
+			"width": "1px"
+		},
+		"spacing": {
+			"blockGap": "0.3rem",
+			"padding": {
+				"top": "4px",
+				"right": "4px",
+				"bottom": "4px",
+				"left": "4px"
+			}
+		}
+	}
+}

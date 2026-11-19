@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Panel",
+	"slug": "panel",
+	"blockTypes": [ "core/group" ],
+	"styles": {
+		"border": {
+			"color": "var(--wp--preset--color--rule)",
+			"style": "solid",
+			"width": "1px"
+		},
+		"spacing": {
+			"padding": {
+				"top": "12px",
+				"right": "16px",
+				"bottom": "12px",
+				"left": "16px"
+			}
+		}
+	}
+}

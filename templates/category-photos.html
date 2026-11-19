@@ -1,20 +1,20 @@
-<!-- wp:group {"className":"sekai-box","layout":{"type":"default"}} -->
-<div class="wp-block-group sekai-box"><!-- wp:template-part {"slug":"title-bar","tagName":"header","className":"sekai-header"} /-->
+<!-- wp:group {"className":"sekai-box is-style-box","layout":{"type":"default"}} -->
+<div class="wp-block-group sekai-box is-style-box"><!-- wp:template-part {"slug":"title-bar","tagName":"header"} /-->
 
 <!-- wp:group {"className":"sekai-row","layout":{"type":"default"}} -->
-<div class="wp-block-group sekai-row"><!-- wp:group {"tagName":"main","className":"sekai-main","layout":{"type":"default"}} -->
-<main class="wp-block-group sekai-main"><!-- wp:query-title {"type":"archive","showPrefix":false,"level":1} /-->
+<div class="wp-block-group sekai-row"><!-- wp:group {"tagName":"main","className":"sekai-main is-style-panel","layout":{"type":"default"}} -->
+<main class="wp-block-group sekai-main is-style-panel"><!-- wp:query-title {"type":"archive","showPrefix":false,"level":1} /-->
 
-<!-- wp:query {"queryId":3,"query":{"inherit":true},"className":"sekai-photo-grid h-feed"} -->
-<div class="wp-block-query sekai-photo-grid h-feed"><!-- wp:post-template {"layout":{"type":"grid","minimumColumnWidth":"9rem"}} -->
-<!-- wp:group {"className":"sekai-photo-tile h-entry","layout":{"type":"default"}} -->
-<div class="wp-block-group sekai-photo-tile h-entry"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"1","sizeSlug":"medium"} /-->
+<!-- wp:query {"queryId":3,"query":{"inherit":true},"className":"h-feed"} -->
+<div class="wp-block-query h-feed"><!-- wp:post-template {"style":{"spacing":{"blockGap":"6px"}},"layout":{"type":"grid","minimumColumnWidth":"9rem"}} -->
+<!-- wp:group {"className":"is-style-tile h-entry","layout":{"type":"default"}} -->
+<div class="wp-block-group is-style-tile h-entry"><!-- wp:post-featured-image {"isLink":true,"aspectRatio":"1","sizeSlug":"medium"} /-->
 
-<!-- wp:post-title {"level":0,"isLink":true,"className":"p-name"} /--></div>
+<!-- wp:post-title {"level":0,"isLink":true,"className":"p-name","style":{"typography":{"fontWeight":"400"}},"fontSize":"small","fontFamily":"body"} /--></div>
 <!-- /wp:group -->
 <!-- /wp:post-template -->
 
-<!-- wp:query-pagination {"paginationArrow":"arrow","className":"sekai-pagination","layout":{"type":"flex","justifyContent":"space-between"}} -->
+<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <!-- wp:query-pagination-previous {"label":"newer"} /-->
 
 <!-- wp:query-pagination-next {"label":"older"} /-->
@@ -31,5 +31,5 @@
 <!-- wp:template-part {"slug":"sidebar","tagName":"aside","className":"sekai-side"} /--></div>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"sekai-foot"} /--></div>
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /--></div>
 <!-- /wp:group -->

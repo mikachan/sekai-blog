@@ -196,6 +196,20 @@
 		"spacing": {
 			"blockGap": "1rem"
 		},
+		"blocks": {
+			"core/site-title": {
+				"typography": {
+					"lineHeight": "1.2"
+				},
+				"elements": {
+					"link": {
+						"typography": {
+							"textDecoration": "none"
+						}
+					}
+				}
+			}
+		},
 		"elements": {
 			"heading": {
 				"typography": {

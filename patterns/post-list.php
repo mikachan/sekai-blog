@@ -13,11 +13,11 @@
 <!-- wp:group {"className":"sekai-list-item h-entry","layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"},"style":{"spacing":{"blockGap":"0.75rem"}}} -->
 <div class="wp-block-group sekai-list-item h-entry"><!-- wp:post-date {"format":"Y-m-d","className":"sekai-date","textColor":"muted"} /-->
 
-<!-- wp:post-title {"level":0,"isLink":true,"className":"p-name"} /--></div>
+<!-- wp:post-title {"level":0,"isLink":true,"className":"p-name","style":{"typography":{"fontSize":"inherit","fontWeight":"400"}},"fontFamily":"body"} /--></div>
 <!-- /wp:group -->
 <!-- /wp:post-template -->
 
-<!-- wp:query-pagination {"paginationArrow":"arrow","className":"sekai-pagination","layout":{"type":"flex","justifyContent":"space-between"}} -->
+<!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"space-between"}} -->
 <!-- wp:query-pagination-previous {"label":"newer"} /-->
 
 <!-- wp:query-pagination-next {"label":"older"} /-->

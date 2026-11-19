@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Box",
+	"slug": "box",
+	"blockTypes": [ "core/group" ],
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--base)"
+		},
+		"border": {
+			"color": "var(--wp--preset--color--primary)",
+			"style": "double",
+			"width": "3px"
+		},
+		"spacing": {
+			"blockGap": "6px",
+			"padding": {
+				"top": "6px",
+				"right": "6px",
+				"bottom": "6px",
+				"left": "6px"
+			}
+		}
+	}
+}
