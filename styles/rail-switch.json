@@ -1,0 +1,53 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"title": "Rail switch",
+	"settings": {
+		"color": {
+			"palette": [
+				{
+					"slug": "base",
+					"name": "Base",
+					"color": "#fdfcf6"
+				},
+				{
+					"slug": "contrast",
+					"name": "Contrast",
+					"color": "#24261f"
+				},
+				{
+					"slug": "primary",
+					"name": "Primary",
+					"color": "#7a3a22"
+				},
+				{
+					"slug": "tint",
+					"name": "Tint",
+					"color": "#eef0e2"
+				},
+				{
+					"slug": "rule",
+					"name": "Rule",
+					"color": "#bfc7a5"
+				},
+				{
+					"slug": "accent",
+					"name": "Accent",
+					"color": "#2f6b3a"
+				},
+				{
+					"slug": "muted",
+					"name": "Muted",
+					"color": "#62645a"
+				}
+			]
+		}
+	},
+	"styles": {
+		"background": {
+			"backgroundImage": {
+				"url": "file:./assets/images/rail-switch.jpg"
+			}
+		}
+	}
+}

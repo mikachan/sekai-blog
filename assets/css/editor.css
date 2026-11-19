@@ -1,0 +1,9 @@
+/*
+ * Editor only. When you edit a post or page on its own (without the
+ * template around it), there's no box behind the text, so give the
+ * canvas the box's background instead of the photo.
+ */
+body:has(.editor-visual-editor__post-title-wrapper) {
+	background-color: var(--wp--preset--color--base) !important;
+	background-image: none !important;
+}

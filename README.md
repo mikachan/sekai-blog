@@ -1,5 +1,7 @@
-## blog.sekai.co.uk
+# Sekai
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/1a35bc60-c308-462b-bef8-2446796a8ce7/deploy-status)](https://app.netlify.com/sites/sekai-blog/deploys)
+The block theme for [blog.sekai.co.uk](https://blog.sekai.co.uk/): a boxed, table-style layout over one of your own photos.
 
-Blog build using Gatsby and Prismic. WIP!
+The repo root is the theme folder, deployed to `wp-content/themes/sekai` on Pressable.
+
+Make template and template part changes in these files rather than in the Site Editor. An edit saved in the Site Editor is stored in the database and takes precedence over the file here.
